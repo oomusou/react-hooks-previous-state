@@ -1,24 +1,15 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 
-class App extends Component {
-  state = {
-    count: 0,
-  }
+const App = () => {
+  const [count, setCount] = useState(0);
+  const addCount = () => setCount(count + 1);
 
-  addCount = () => {
-    this.setState(prevState => ({
-      count: prevState.count + 1
-    }));
-  }
-
-  render() {
-    return (
-      <div>
-        <button onClick={ this.addCount }>+</button>
-        <div>{ this.state.count }</div>
-      </div>
-    );
-  }
-}
+  return (
+    <div>
+      <button onClick={ addCount }>+</button>
+      <div>{ count }</div>
+    </div>
+  );
+};
 
 export default App;
